@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style03.css">
+</head>
+<body>
+
+    <div id="app">
+        
+        <!--    <form action="">
+                     <button v-on:click.prevent="onClick">Кнопка</button>
+                </form> 
+        -->
+
+        <input type="text" v-model="message" v-on:keyup.enter="onClick">
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script> 
+
+ <script>
+     new Vue ({
+        el: "#app",
+        data: {
+            message: ''
+        },
+        methods: {
+            onClick: function() {
+                console.log( this.message )
+            }
+        }
+     })
+ </script>
+</body>
+</html>

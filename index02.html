@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style02.css">
+</head>
+<body>
+  
+        <div id="app">
+            <ul>
+                <li v-for="bear1 in bears" v-bind:class="{ 'strike': bear1.status }">{{ bear1.name }}</li>
+            </ul>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script>
+
+
+    <script>
+    new Vue ({
+        el:"#app",
+        data: {
+            bears:[
+                {
+                    name: 'гризли',
+                    status: false
+                },
+                {
+                    name: 'белый',
+                    status: false
+                },
+                {
+                    name: 'панда',
+                    status: true
+                },
+                {
+                    name: 'губач',
+                    status: false
+                },
+            ]
+        }
+    })
+    </script>
+
+</body>
+</html>
