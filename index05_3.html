@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--<link rel="stylesheet" href="style05.css">-->
+</head>
+<body>
+    <div id="app">
+
+        <textarea v-model="input"></textarea>
+        <div id="result">{{{ input | marked }}} </div>
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script> 
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.6.2/marked.js"></script>-->
+
+    <script>
+
+        Vue.filter('marked', function(value) {
+            return value.replace('единорог', '&#129412;')
+                        .replace('щенок', '&#128054;')
+                        .replace('огне', '&#128293;')
+                        .replace('грустно', '&#128546;')
+        })
+        new Vue ({
+            el: "#app",
+            data:{
+                input: '',
+                array: [
+                    {
+                        name: 'Иван',
+                        age: 45
+                    },
+                    {
+                        name: 'Вика',
+                        age: 19
+                    },
+                    {
+                        name: 'Иван',
+                        age: 29
+                    },
+                    {
+                        name: 'Максим',
+                        age: 20
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
