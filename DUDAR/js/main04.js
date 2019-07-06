@@ -1,23 +1,15 @@
 new Vue ({
     el: "#app",
     data: {
-        value: 1,
+        show: true,
+        cars: [
+            {model: "BMW", speed: 250.8},
+            {model: "AUDI", speed: 240.21},
+            {model: "AMG", speed: 350.4},
+            {model: "FORD", speed: 160.5}
+        ]
     },
-
     methods: {
-        increment (value) {
-            this.value= value;
-            if (value == 25) {
-                alert ("Вы ввели число 25");
-            }
-        }
-    },
-
-    computed: {
-        doubleValue () {
-            return this.value * 2;    
-        }
+        
     }
-
-
 });

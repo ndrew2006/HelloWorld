@@ -13,7 +13,7 @@
     <div id="app">
         <button v-on:click="show=!show">Скрыть / Показать</button>
      <p v-if='show'>Текст, который может стать невидимым</p>
-     <p v-else>Текст2</p>
+     <p v-else> {{ message | lowerCase | capitalize }} </p>
 
      <ul>
          <li v-for="(car, i) in cars"> {{ i+1 }}. {{ car.model }}, скорость: {{ car.speed }}</li>
@@ -25,6 +25,6 @@
 
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/main04.js"></script>
+    <script src="js/main05.js"></script>
 </body>
 </html>
