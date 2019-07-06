@@ -11,16 +11,14 @@
     
 
     <div id="app">
-        <span v-on:mouseover="changeText">Text</span>
-        <p>{{ title }}</p>
-        <p v-bind:class=styleCss>Цвет: {{ styleCss }}</p>
-
-        <input type="text" v-on:input="styleCss=$event.target.value">
+        <input type="text" v-on:input="increment ($event.target.value)">
+        <p>{{ value }}</p>
+        <p>{{ doubleValue }}</p>       
     </div>
 
 
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main03.js"></script>
 </body>
 </html>
