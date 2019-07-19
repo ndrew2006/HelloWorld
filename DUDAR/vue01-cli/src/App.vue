@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <app-example></app-example>
+    <!-- <app-example></app-example> Тестовое задание Дударь -->
+    <app-dka></app-dka>
   </div>
 </template>
 
