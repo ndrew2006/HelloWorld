@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 //import Example from './Example.vue' Тестовое задание Дударь
-import DKA from './dka03.vue'
+import DKA from './test.vue'
 window.axios = require('axios') //подключаем модуль axios
 
 
