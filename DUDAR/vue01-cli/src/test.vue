@@ -2,9 +2,9 @@
     <div>
         <h1>Введите имя фильма</h1>
         <input type="text" v-model='userInput'>
-        <button @click="doString(addStringRus)">Результат</button>
-        <p> {{ readyString }} </p>
-        <button @click="doString(addStringEng)">На английском</button>
+        <button @click="show = !show">{{buttonText}}</button>
+        <p v-if="show"> {{ readyString }} </p>
+        <!-- <button @click="doString(addStringEng)" v-if="caption='addStringEng'">На английском</button> -->
     </div>
 </template>
 
@@ -13,6 +13,7 @@
 export default {
     data () {
         return {
+            show: true,
             userInput: '',
             readyString: '',
             addStringRus: ' в твоей заднице.',
@@ -30,6 +31,14 @@ export default {
 
             //console.log(this.userInput);
             //console.log(readyStr);
+        }
+    },
+    computed: {
+        buttonText: function() {
+            if (this.show) {
+                return "Русский"
+            }
+            return "Английский"
         }
     }
 }
