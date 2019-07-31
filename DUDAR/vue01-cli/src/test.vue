@@ -2,9 +2,9 @@
     <div>
         <h1>Введите имя фильма</h1>
         <input type="text" v-model='userInput'>
-        <button @click="show = !show">{{buttonText}}</button>
-        <p v-if="show"> {{ userInput + addStringEng }} </p>
-        <p v-else> {{ userInput + addStringRus }} </p>
+        <button @click="doString()">{{buttonText}}</button>
+        <p> {{ readyString }} </p>
+        
     </div>
 </template>
 
@@ -13,25 +13,34 @@
 export default {
     data () {
         return {
-            show: false,
+            show: true,
+            readyString: '',
             userInput: '',
             addStringRus: ' в твоей заднице.',
             addStringEng: ' in your ass.'
         }
     },
-   // methods: {
-   //     doString(addString) {
-   //        if (this.userInput) {
-   //             this.readyString = this.userInput + addString
-   //         }
-   //         else {
-   //             alert("Введите название фильма!")
-   //             }
-//
-  //          //console.log(this.userInput);
-  //          //console.log(readyStr);
-  //      }
-  //  },
+    methods: {
+        doString() {
+           if (this.userInput) {
+                this.show = !this.show;
+                    if (this.show)  {
+                        this.readyString = this.userInput + this.addStringEng
+                        }
+
+                        else {
+                            this.readyString = this.userInput + this.addStringRus
+                        }
+            }
+            else {
+                this.readyString = '';
+                alert("Введите название фильма!");
+                }
+
+            //console.log(this.userInput);
+            //console.log(this.readyString);
+        }
+    },
     computed: {
         buttonText: function() {
             if (this.show) {
